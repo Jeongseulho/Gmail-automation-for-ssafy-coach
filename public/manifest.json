@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "mail Automation For Ssafy Coach",
+  "description": "mail Automation For Ssafy Coach",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["gmail_content_script.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["/assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
