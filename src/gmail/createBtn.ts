@@ -1,4 +1,4 @@
-const createBtn = () => {
+export const createBtn = () => {
   const btn = document.createElement('button');
   btn.style.width = '70px';
   btn.style.height = '70px';
@@ -16,11 +16,3 @@ const createBtn = () => {
   btn.style.cursor = 'pointer';
   return btn;
 };
-
-const getKeywords = () => {};
-
-const btn = createBtn();
-document.body.appendChild(btn);
-btn.addEventListener('click', () => {
-  const attachedFileName = document.querySelector('.vI')?.textContent;
-});
