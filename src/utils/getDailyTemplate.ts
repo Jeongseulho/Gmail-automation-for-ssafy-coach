@@ -18,7 +18,7 @@ export const getDailyTemplate = (date: string, campus: string, classSection: str
       <br>
       감사합니다.
       <br>
-      이희진 드림.`;
+      ${name} 드림.`;
   return {
     title,
     content,
