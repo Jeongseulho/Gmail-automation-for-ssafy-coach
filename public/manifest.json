@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "mail Automation For Ssafy Coach",
-  "description": "mail Automation For Ssafy Coach",
+  "name": "auto coach mail",
+  "description": "auto coach mail",
   "version": "1.0",
   "content_scripts": [
     {
