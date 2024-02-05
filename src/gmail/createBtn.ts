@@ -4,7 +4,7 @@ export const createBtn = () => {
   btn.style.height = '70px';
   btn.style.position = 'fixed';
   btn.style.bottom = '50px';
-  btn.style.right = '0px';
+  btn.style.right = '5px';
   btn.style.zIndex = '9999';
   btn.style.border = 'none';
   btn.style.borderRadius = '10px';

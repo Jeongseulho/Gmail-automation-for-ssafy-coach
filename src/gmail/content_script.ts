@@ -1,5 +1,5 @@
-import { parseDailyReport } from '../utils/parseDailyReport';
-import { getDailyTemplate } from '../utils/getDailyTemplate';
+import { parseDailyReport } from '../utils/daily/parseDailyReport';
+import { getDailyTemplate } from '../utils/daily/getDailyTemplate';
 import { createBtn } from './createBtn';
 
 const btn = createBtn();
@@ -13,16 +13,20 @@ btn.addEventListener('click', () => {
     return alert('파일이 첨부되지 않았습니다.');
   }
 
+  let template = { title: '', content: '' };
+
   if (attachedFileName.includes('일일')) {
     if (attachedFileName.includes('취합')) {
       return;
+    } else {
+      const { date, campus, classGroup, name } = parseDailyReport(attachedFileName);
+      template = getDailyTemplate(date, campus, classGroup, name);
     }
-    const { date, campus, classGroup, name } = parseDailyReport(attachedFileName);
-    const { title, content } = getDailyTemplate(date, campus, classGroup, name);
-    titleInput.value = title;
-    contentInput.innerHTML = content;
-    return;
   }
+
+  titleInput.value = template.title;
+  contentInput.innerHTML = template.content;
+  return;
 });
 
 document.body.appendChild(btn);

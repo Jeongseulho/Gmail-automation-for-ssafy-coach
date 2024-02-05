@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getDailyTemplate 함수 내용 템플릿을 반환한다 1`] = `
+"
+    <div>안녕하세요.</div>
+    <br>
+    <div>구미 실습코치 이희진입니다.</div>
+    <br>
+    <div>2월 2일 일일 프로젝트 진행 보고서 첨부파일로 송부 드립니다.</div>
+    <br>
+    <b>특이사항</b>
+    <br>
+    <div>해당 사항 없음.</div>
+    <br>
+    <div>감사합니다.</div>
+    <div>이희진 드림.</div>
+  "
+`;
+
+exports[`getDailyTemplate 함수 제목 템플릿을 반환한다 1`] = `"[SSAFY] 2월 2일(금) 구미 1반 실습코치 이희진 일일 보고서 송부"`;
