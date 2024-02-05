@@ -1,6 +1,6 @@
 export const createBtn = () => {
   const btn = document.createElement('button');
-  btn.style.width = '70px';
+  btn.style.width = '60px';
   btn.style.height = '70px';
   btn.style.position = 'fixed';
   btn.style.bottom = '50px';
