@@ -1,6 +1,7 @@
-import { parseDailyReport } from '../utils/daily/parseDailyReport';
+import { parseDaily } from '../utils/daily/parseDaily';
 import { getDailyTemplate } from '../utils/daily/getDailyTemplate';
 import { createBtn } from './createBtn';
+import { getDailyGatherTemplate } from '../utils/dailyGather/getDailyGatherTemplate';
 
 const btn = createBtn();
 
@@ -17,10 +18,11 @@ btn.addEventListener('click', () => {
 
   if (attachedFileName.includes('일일')) {
     if (attachedFileName.includes('취합')) {
-      return;
+      const { date, campus, name } = parseDaily(attachedFileName, true);
+      template = getDailyGatherTemplate(date, campus, name);
     } else {
-      const { date, campus, classGroup, name } = parseDailyReport(attachedFileName);
-      template = getDailyTemplate(date, campus, classGroup, name);
+      const { date, campus, classGroup, name } = parseDaily(attachedFileName);
+      template = getDailyTemplate(date, campus, classGroup || 'x반', name);
     }
   }
 
