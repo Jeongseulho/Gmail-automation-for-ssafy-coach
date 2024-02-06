@@ -1,10 +1,10 @@
+import { Campus } from '../../types/Campus';
 import { formatDate } from '../common/formatDate';
 
-export const getDailyTemplate = (date: string, campus: string, classSection: string, name: string) => {
-  const title = '[SSAFY]' + ' ' + formatDate(date) + ' ' + campus + ' ' + classSection + ' ' + '실습코치' + ' ' + name + ' ' + '일일 보고서 송부';
+export const getDailyTemplate = (date: string, campus: Campus, classSection: string, name: string) => {
+  const title = `[SSAFY] ${formatDate(date)} ${campus} ${classSection} 실습코치 ${name} 일일 보고서 송부`;
   const content = `
     <div>안녕하세요.</div>
-    <br>
     <div>${campus} 실습코치 ${name}입니다.</div>
     <br>
     <div>${formatDate(date, false)} 일일 프로젝트 진행 보고서 첨부파일로 송부 드립니다.</div>

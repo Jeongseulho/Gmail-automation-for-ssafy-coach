@@ -1,3 +1,4 @@
+import { Campus } from './../../types/Campus';
 import { removeExtension } from '../common/removeExtension';
 
 export const parseDaily = (fileName: string, isGather: boolean = false) => {
@@ -10,14 +11,14 @@ export const parseDaily = (fileName: string, isGather: boolean = false) => {
   if (isGather) {
     return {
       date,
-      campus,
+      campus: campus as Campus,
       name: removeExtension(name),
     };
   }
 
   return {
     date,
-    campus,
+    campus: campus as Campus,
     classGroup,
     name,
   };
