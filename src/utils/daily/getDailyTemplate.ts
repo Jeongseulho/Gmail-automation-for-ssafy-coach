@@ -1,14 +1,13 @@
 import { formatDate } from '../common/formatDate';
 
 export const getDailyTemplate = (date: string, campus: string, classSection: string, name: string) => {
-  const formattedDate = formatDate(date);
-  const title = '[SSAFY]' + ' ' + formattedDate + ' ' + campus + ' ' + classSection + ' ' + '실습코치' + ' ' + name + ' ' + '일일 보고서 송부';
+  const title = '[SSAFY]' + ' ' + formatDate(date) + ' ' + campus + ' ' + classSection + ' ' + '실습코치' + ' ' + name + ' ' + '일일 보고서 송부';
   const content = `
     <div>안녕하세요.</div>
     <br>
     <div>${campus} 실습코치 ${name}입니다.</div>
     <br>
-    <div>${formattedDate.slice(0, -3)} 일일 프로젝트 진행 보고서 첨부파일로 송부 드립니다.</div>
+    <div>${formatDate(date, false)} 일일 프로젝트 진행 보고서 첨부파일로 송부 드립니다.</div>
     <br>
     <b>특이사항</b>
     <br>
