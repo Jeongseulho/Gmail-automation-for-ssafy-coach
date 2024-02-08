@@ -7,10 +7,13 @@ import { mailBtn } from '../components/mailBtn';
 const btn = mailBtn();
 
 btn.addEventListener('click', async () => {
-  const titleInput = document.querySelector('[aria-label="제목"]') as HTMLInputElement;
-  const contentInput = document.querySelector('div[aria-label="메일 본문"]') as HTMLDivElement;
+  const titleInput = document.querySelector('#subject_title') as HTMLInputElement;
+  titleInput.focus();
+  const editorIframe = document.querySelector('.editor_body>iframe') as HTMLIFrameElement;
+  const iframeDocument = editorIframe.contentWindow!.document;
+  const contentInput = iframeDocument.querySelector('.workseditor-content') as HTMLDivElement;
 
-  const attachedFiles = document.querySelectorAll('.vI');
+  const attachedFiles = document.querySelectorAll('.file_title>.text');
   if (attachedFiles.length === 0) return alert('파일이 첨부되지 않았습니다.');
   if (attachedFiles.length > 2) return alert('첨부파일이 3개 이상인 경우 지원하지 않습니다.');
   if (attachedFiles.length === 2) {

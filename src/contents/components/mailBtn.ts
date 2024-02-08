@@ -1,4 +1,4 @@
-export const createBtn = () => {
+export const mailBtn = () => {
   const btn = document.createElement('button');
   btn.style.width = '60px';
   btn.style.height = '70px';
@@ -14,5 +14,6 @@ export const createBtn = () => {
   btn.style.backgroundRepeat = 'no-repeat';
   btn.style.backgroundSize = 'contain';
   btn.style.cursor = 'pointer';
+  document.body.appendChild(btn);
   return btn;
 };

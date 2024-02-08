@@ -7,6 +7,10 @@
     {
       "matches": ["https://mail.google.com/*"],
       "js": ["gmail_content_script.js"]
+    },
+    {
+      "matches": ["https://mail.naver.com/*"],
+      "js": ["naver_content_script.js"]
     }
   ],
   "web_accessible_resources": [
