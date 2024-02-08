@@ -21,4 +21,12 @@ describe('getFileCategory 함수', () => {
   it('휴가신청서 파일 감지', () => {
     expect(getFileCategory('240201_휴가신청서_구미_이희진.docx')).toBe(FILE_CATEGORY.DAY_OFF);
   });
+
+  it('잘못된 파일명이 들어왔을 때', () => {
+    const wrongFileName = 'unknown_file.txt';
+
+    expect(() => {
+      getFileCategory(wrongFileName);
+    }).toThrow('파일명을 확인해주세요.');
+  });
 });
