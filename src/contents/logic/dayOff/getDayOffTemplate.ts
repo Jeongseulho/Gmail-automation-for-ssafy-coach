@@ -1,8 +1,7 @@
 import { DayOffCategory } from '@/types/DayOffCategory';
 import { formatDate } from '@/utils/formatDate';
 
-export const getDayOffTemplate = async (date: string, campus: string, name: string, selectedDayOffCategory: DayOffCategory) => {
-  // 2월 1일(목) 구미 실습코치 이희진 휴가신청서 송부
+export const getDayOffTemplate = (date: string, campus: string, name: string, selectedDayOffCategory: DayOffCategory) => {
   const dayOffCategoryStr = selectedDayOffCategory === '하루 휴가' ? '' : `(${selectedDayOffCategory})`;
   const title = `[SSAFY] ${formatDate(date)} ${campus} 실습코치 ${name} 휴가신청서 송부`;
   const content = `
