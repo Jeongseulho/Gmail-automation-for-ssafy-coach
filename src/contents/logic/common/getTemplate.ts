@@ -6,6 +6,9 @@ import { parseJira } from '@/contents/logic/jira/parseJira';
 import { getDailyGatherTemplate } from '../dailyGather/getDailyGatherTemplate';
 import { getDailyTemplate } from '../daily/getDailyTemplate';
 import { getJiraTemplate } from '../jira/getJiraTemplate';
+import { parseDayOff } from '@/contents/logic/dayOff/parseDayOff';
+import { getDayOffTemplate } from '@/contents/logic/dayOff/getDayOffTemplate';
+import { dayOffSelect } from '../dayOff/dayOffSelect';
 
 export const getTemplate = async (attachedFileName: string, fileCategory: FileCategoryValue) => {
   switch (fileCategory) {
@@ -21,6 +24,11 @@ export const getTemplate = async (attachedFileName: string, fileCategory: FileCa
       const { date, project, campus, classGroup, week, name1, name2 } = parseJira(attachedFileName);
       const selectedName = await nameSelect(name1, name2);
       return getJiraTemplate(date, project, campus, classGroup, week, selectedName);
+    }
+    case FILE_CATEGORY.DAY_OFF: {
+      const { date, campus, name } = parseDayOff(attachedFileName);
+      const selectedDayOffCategory = await dayOffSelect();
+      return getDayOffTemplate(date, campus, name, selectedDayOffCategory);
     }
 
     default: {

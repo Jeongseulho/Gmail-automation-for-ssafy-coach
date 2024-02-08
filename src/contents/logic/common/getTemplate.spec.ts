@@ -11,9 +11,4 @@ describe('getTemplate 함수', () => {
     const template = await getTemplate('10기_240206_일일 프로젝트 진행_공통_구미_1반_정슬호_오프라인.docx', FILE_CATEGORY.DAILY);
     expect(template).toMatchSnapshot();
   });
-
-  // it('휴가 신청서 템플릿 반환', async () => {
-  //   const template = await getTemplate('240201_휴가신청서_구미_이희진.docx', FILE_CATEGORY.DAY_OFF);
-  //   expect(template).toMatchSnapshot();
-  // });
 });

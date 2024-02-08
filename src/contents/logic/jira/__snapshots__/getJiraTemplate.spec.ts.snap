@@ -7,6 +7,10 @@ exports[`getJiraTemplate 함수 내용 템플릿을 반환 1`] = `
     <br>
     <div>구미 1반 금주 Jira 현황 보고서 첨부파일로 송부 드립니다.</div>
     <br>
+    <b>특이사항</b>
+    <br>
+    <div>해당 사항 없음.</div>
+    <br>
     <div>감사합니다.</div>
     <div>이희진 드림.</div>
   "
