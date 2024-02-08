@@ -1,5 +1,5 @@
-import { Campus } from '../../types/Campus';
-import { formatDate } from '../common/formatDate';
+import { Campus } from '@/types/Campus';
+import { formatDate } from '@/utils/common/formatDate';
 
 export const getDailyGatherTemplate = (date: string, campus: Campus, name: string) => {
   const title = `[SSAFY] ${formatDate(date)} ${campus}캠퍼스 일일 보고서 취합본 송부`;

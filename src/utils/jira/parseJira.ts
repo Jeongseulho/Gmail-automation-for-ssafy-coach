@@ -1,7 +1,7 @@
-import { removeExtension } from '../common/removeExtension';
-import { Campus } from '../../types/Campus';
-import { Project } from '../../types/Project';
-import { Week } from '../../types/Week';
+import { removeExtension } from '@/utils/common/removeExtension';
+import { Campus } from '@/types/Campus';
+import { Project } from '@/types/Project';
+import { Week } from '@/types/Week';
 
 export const parseJira = (fileName: string) => {
   const parsedStr = fileName.split('_');

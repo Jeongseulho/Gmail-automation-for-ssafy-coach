@@ -1,5 +1,5 @@
-import { Campus } from './../../types/Campus';
-import { removeExtension } from '../common/removeExtension';
+import { Campus } from '@/types/Campus';
+import { removeExtension } from '@/utils/common/removeExtension';
 
 export const parseDaily = (fileName: string, isGather: boolean = false) => {
   const parsedStr = fileName.split('_');

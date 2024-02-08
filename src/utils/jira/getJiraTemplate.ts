@@ -1,7 +1,7 @@
-import { Campus } from '../../types/Campus';
-import { Project } from '../../types/Project';
-import { Week } from '../../types/Week';
-import { formatDate } from '../common/formatDate';
+import { Campus } from '@/types/Campus';
+import { Project } from '@/types/Project';
+import { Week } from '@/types/Week';
+import { formatDate } from '@/utils/common/formatDate';
 
 export const getJiraTemplate = (date: string, project: Project, campus: Campus, classGroup: string, week: Week, name: string) => {
   const title = `[SSAFY] ${formatDate(date)} ${campus} ${classGroup} ${project} ${week} 주간 Jira 현황 보고서 송부`;
