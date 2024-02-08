@@ -1,14 +1,14 @@
 import { FILE_CATEGORY } from '@/constants/FileCategory';
 import { FileCategoryValue } from '@/types/FileCategoryValue';
-import { nameSelect } from './nameSelect';
+import { nameSelect } from '@/contents/logic/common/nameSelect';
 import { parseDaily } from '@/contents/logic/daily/parseDaily';
 import { parseJira } from '@/contents/logic/jira/parseJira';
-import { getDailyGatherTemplate } from '../dailyGather/getDailyGatherTemplate';
-import { getDailyTemplate } from '../daily/getDailyTemplate';
-import { getJiraTemplate } from '../jira/getJiraTemplate';
 import { parseDayOff } from '@/contents/logic/dayOff/parseDayOff';
 import { getDayOffTemplate } from '@/contents/logic/dayOff/getDayOffTemplate';
-import { dayOffSelect } from '../dayOff/dayOffSelect';
+import { getDailyGatherTemplate } from '@/contents/logic/dailyGather/getDailyGatherTemplate';
+import { getDailyTemplate } from '@/contents/logic/daily/getDailyTemplate';
+import { getJiraTemplate } from '@/contents/logic/jira/getJiraTemplate';
+import { dayOffSelect } from '@/contents/logic/dayOff/dayOffSelect';
 
 export const getTemplate = async (attachedFileName: string, fileCategory: FileCategoryValue) => {
   switch (fileCategory) {
