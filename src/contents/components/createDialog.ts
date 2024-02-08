@@ -1,4 +1,4 @@
-function createDialog(name1: string, name2: string, callback: (selectedName: string) => void) {
+export const createDialog = (name1: string, name2: string, callback: (selectedName: string) => void) => {
   // dialog 요소 생성
   const dialog = document.createElement('dialog');
   dialog.setAttribute('style', 'border: solid black 1px; border-radius: 8px; padding: 0px; ');
@@ -44,10 +44,4 @@ function createDialog(name1: string, name2: string, callback: (selectedName: str
   document.body.appendChild(dialog);
 
   dialog.showModal();
-}
-
-export const nameSelect = (name1: string, name2: string): Promise<string> => {
-  return new Promise((resolve) => {
-    createDialog(name1, name2, (selectedName: string) => resolve(selectedName));
-  });
 };

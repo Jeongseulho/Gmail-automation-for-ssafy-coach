@@ -1,5 +1,5 @@
-import { getFileCategory } from '@/common/getFileCategory';
-import { getTemplate } from '@/common/getTemplate';
+import { getTemplate } from '@/contents/logic/common/getTemplate';
+import { getFileCategory } from '@/contents/logic/common/getFileCategory';
 import { createBtn } from './createBtn';
 
 const btn = createBtn();
