@@ -1,2 +1,3 @@
 import { FILE_CATEGORY } from '@/constants/FileCategory';
-export type FileCategoryValue = (typeof FILE_CATEGORY)[keyof typeof FILE_CATEGORY];
+import { ObjValues } from './constantsValue';
+export type FileCategoryValue = ObjValues<typeof FILE_CATEGORY>;
