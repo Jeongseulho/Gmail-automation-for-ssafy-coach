@@ -6,6 +6,7 @@ module.exports = {
   entry: {
     gmail_content_script: path.join(__dirname, '../src/contents/gmail/content_script.ts'),
     naver_content_script: path.join(__dirname, '../src/contents/naverMail/content_script.ts'),
+    background: path.join(__dirname, '../src/background/background.ts'),
   },
   output: {
     path: path.join(__dirname, '../dist'),

@@ -16,4 +16,8 @@ btn.addEventListener('click', async () => {
   const template = await getTemplate(attachedFileName, fileCategory, isUnitWithJira);
   titleInput.value = template.title;
   contentInput.innerHTML = template.content;
+
+  const today = new Date().toDateString();
+  chrome.storage.local.clear();
+  chrome.storage.local.set({ [today]: true });
 });
