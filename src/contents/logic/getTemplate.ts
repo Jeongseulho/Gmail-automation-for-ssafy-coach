@@ -9,8 +9,14 @@ import { getDailyGatherTemplate } from '@/contents/logic/dailyGather/getDailyGat
 import { getDailyTemplate } from '@/contents/logic/daily/getDailyTemplate';
 import { getJiraTemplate } from '@/contents/logic/jira/getJiraTemplate';
 import { dayOffSelect } from '@/contents/logic/dayOff/dayOffSelect';
+import { getUnitWithJiraTemplate } from '@/contents/logic/unitWithJira/getUnitWithJiraTemplate';
 
-export const getTemplate = async (attachedFileName: string, fileCategory: FileCategoryValue) => {
+export const getTemplate = async (attachedFileName: string, fileCategory: FileCategoryValue, isUnitWithJira: boolean) => {
+  if (isUnitWithJira) {
+    const { date, project, campus, classGroup, week, name1, name2 } = parseJira(attachedFileName);
+    const selectedName = await nameSelect(name1, name2);
+    return getUnitWithJiraTemplate(date, project, campus, classGroup, week, selectedName);
+  }
   switch (fileCategory) {
     case FILE_CATEGORY.DAILY_GATHER: {
       const { date, campus, name } = parseDaily(attachedFileName, true);

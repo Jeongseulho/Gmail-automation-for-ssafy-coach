@@ -1,6 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getDailyGatherTemplate 함수 내용 템플릿을 반환한다 1`] = `
+exports[`getDailyGatherTemplate 함수 일일 취합 보고서 템플릿을 반환한다 1`] = `"[SSAFY] 2월 2일(금) 구미캠퍼스 일일 보고서 취합본 송부"`;
+
+exports[`getDailyGatherTemplate 함수 일일 취합 보고서 템플릿을 반환한다 2`] = `
 "
     <div>안녕하세요.</div>
     <div>구미 실습코치 이희진입니다.</div>
@@ -70,5 +72,3 @@ exports[`getDailyGatherTemplate 함수 내용 템플릿을 반환한다 1`] = `
     <div>이희진 드림.</div>
   "
 `;
-
-exports[`getDailyGatherTemplate 함수 제목 템플릿을 반환한다 1`] = `"[SSAFY] 2월 2일(금) 구미캠퍼스 일일 보고서 취합본 송부"`;
