@@ -1,4 +1,5 @@
 import { setupAlarm } from './setupAlarm';
+import { isWorkDay } from '@/utils/isWorkDay';
 
 chrome.runtime.onInstalled.addListener(async () => {
   setupAlarm();
@@ -13,7 +14,7 @@ chrome.alarms.get('daily6PMAlarm', (alarm) => {
 chrome.alarms.onAlarm.addListener(() => {
   const today = new Date().toDateString();
   chrome.storage.local.get([today], (result) => {
-    if (!result[today]) {
+    if (!result[today] && isWorkDay(today)) {
       chrome.notifications.create('reminder', {
         type: 'basic',
         iconUrl: chrome.runtime.getURL('/assets/btn.png'),
