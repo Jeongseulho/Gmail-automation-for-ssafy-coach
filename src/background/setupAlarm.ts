@@ -1,4 +1,4 @@
-import { calUntil6PM } from './calUntil6PM';
+import { calUntil6PM } from '@/utils/calUntil6PM';
 
 export const setupAlarm = () => {
   chrome.alarms.create('daily6PMAlarm', {
