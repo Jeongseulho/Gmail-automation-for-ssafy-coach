@@ -1,7 +1,4 @@
-export const calUntil6PM = () => {
-  const now = new Date();
-  const targetTime = new Date(new Date().setHours(18, 0, 0, 0));
-
+export const calRemainMinutes = (now: Date, targetTime: Date) => {
   if (now > targetTime) {
     targetTime.setDate(targetTime.getDate() + 1);
   }

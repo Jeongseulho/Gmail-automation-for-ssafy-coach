@@ -1,21 +1,21 @@
-import { setupAlarm } from './setupAlarm';
+import { setup6PMAlarm } from './setup6PMAlarm';
 import { isWorkDay } from '@/utils/isWorkDay';
 
 // TODO: jest 테스트 코드 작성
 chrome.runtime.onInstalled.addListener(async () => {
-  setupAlarm();
+  setup6PMAlarm();
 });
 
 chrome.alarms.get('daily6PMAlarm', (alarm) => {
   if (!alarm) {
-    setupAlarm();
+    setup6PMAlarm();
   }
 });
 
 chrome.alarms.onAlarm.addListener(() => {
   const today = new Date().toDateString();
-  chrome.storage.local.get([today], (result) => {
-    if (!result[today] && isWorkDay(today)) {
+  chrome.storage.local.get([today], (items) => {
+    if (!items[today] && isWorkDay(today)) {
       chrome.notifications.create('reminder', {
         type: 'basic',
         iconUrl: chrome.runtime.getURL('/assets/btn.png'),
