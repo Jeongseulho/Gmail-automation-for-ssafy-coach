@@ -1,6 +1,7 @@
 import { setupAlarm } from './setupAlarm';
 import { isWorkDay } from '@/utils/isWorkDay';
 
+// TODO: jest 테스트 코드 작성
 chrome.runtime.onInstalled.addListener(async () => {
   setupAlarm();
 });
