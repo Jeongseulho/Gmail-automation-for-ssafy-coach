@@ -10,6 +10,9 @@ import { getDailyTemplate } from '@/contents/logic/daily/getDailyTemplate';
 import { getJiraTemplate } from '@/contents/logic/jira/getJiraTemplate';
 import { dayOffSelect } from '@/contents/logic/dayOff/dayOffSelect';
 import { getUnitWithJiraTemplate } from '@/contents/logic/unitWithJira/getUnitWithJiraTemplate';
+import { getUnitTemplate } from './unit/getUnitTemplate';
+import { parseUnit } from './unit/parseUnit';
+import { weekSelect } from './common/weekSelect';
 
 export const getTemplate = async (attachedFileName: string, fileCategory: FileCategoryValue, isUnitWithJira: boolean) => {
   if (isUnitWithJira) {
@@ -30,6 +33,12 @@ export const getTemplate = async (attachedFileName: string, fileCategory: FileCa
       const { date, project, campus, classGroup, week, name1, name2 } = parseJira(attachedFileName);
       const selectedName = await nameSelect(name1, name2);
       return getJiraTemplate(date, project, campus, classGroup, week, selectedName);
+    }
+    case FILE_CATEGORY.UNIT: {
+      const { date, project, campus, classGroup, name1, name2 } = parseUnit(attachedFileName);
+      const selectedName = await nameSelect(name1, name2);
+      const selectedWeek = await weekSelect(project);
+      return getUnitTemplate(date, project, campus, classGroup, selectedWeek, selectedName);
     }
     case FILE_CATEGORY.DAY_OFF: {
       const { date, campus, name } = parseDayOff(attachedFileName);
