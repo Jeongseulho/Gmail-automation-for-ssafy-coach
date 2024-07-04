@@ -5,6 +5,7 @@ describe('parseDaily 함수', () => {
     const fileName = '10기_240202_일일 프로젝트 진행_공통_구미_1반_이희진_오프라인.docx';
     const parsed = parseDaily(fileName);
     expect(parsed).toEqual({
+      cohort: '10기',
       date: '240202',
       campus: '구미',
       classGroup: '1반',
@@ -16,6 +17,7 @@ describe('parseDaily 함수', () => {
     const fileName = '10기_240202_일일 프로젝트 진행_공통_구미_취합_서은진.docx';
     const parsed = parseDaily(fileName, true);
     expect(parsed).toEqual({
+      cohort: '10기',
       date: '240202',
       campus: '구미',
       name: '서은진',

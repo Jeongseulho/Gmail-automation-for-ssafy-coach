@@ -13,42 +13,57 @@ import { getUnitWithJiraTemplate } from '@/contents/logic/unitWithJira/getUnitWi
 import { getUnitTemplate } from './unit/getUnitTemplate';
 import { parseUnit } from './unit/parseUnit';
 import { weekSelect } from './common/weekSelect';
+import { parseWrapUpGather } from './wrapUpGather/parseWrapUpGather';
+import { getWrapUpGatherTemplate } from './wrapUpGather/getWrapUpGatherTemplate';
+import { parseWrapUp } from './wrapUp/parseWrapUp';
+import { getWrapUpTemplate } from './wrapUp/getWrapUpTemplate';
+import { WRAP_UP_GATHER_NAMES } from '@/constants/WrapUpGatherNames';
+import { CLASS_CNT } from '@/constants/ClassCnt';
+import { classCntSelect } from './common/classCntSelect';
 
 export const getTemplate = async (attachedFileName: string, fileCategory: FileCategoryValue, isUnitWithJira: boolean) => {
   if (isUnitWithJira) {
-    const { date, project, campus, classGroup, week, name1, name2 } = parseJira(attachedFileName);
-    const selectedName = await nameSelect(name1, name2);
-    return getUnitWithJiraTemplate(date, project, campus, classGroup, week, selectedName);
+    const { date, project, campus, classGroup, week, name } = parseJira(attachedFileName);
+    return getUnitWithJiraTemplate(date, project, campus, classGroup, week, name);
   }
   switch (fileCategory) {
     case FILE_CATEGORY.DAILY_GATHER: {
-      const { date, campus, name } = parseDaily(attachedFileName, true);
-      return getDailyGatherTemplate(date, campus, name);
+      const { cohort, date, campus, name } = parseDaily(attachedFileName, true);
+      const classCnt = await classCntSelect(...CLASS_CNT);
+      return getDailyGatherTemplate(cohort, date, campus, name, classCnt);
     }
     case FILE_CATEGORY.DAILY: {
-      const { date, campus, classGroup, name } = parseDaily(attachedFileName);
-      return getDailyTemplate(date, campus, classGroup || 'x반', name);
+      const { cohort, date, campus, classGroup, name } = parseDaily(attachedFileName);
+      return getDailyTemplate(cohort, date, campus, classGroup || 'x반', name);
     }
     case FILE_CATEGORY.JIRA: {
-      const { date, project, campus, classGroup, week, name1, name2 } = parseJira(attachedFileName);
-      const selectedName = await nameSelect(name1, name2);
-      return getJiraTemplate(date, project, campus, classGroup, week, selectedName);
+      const { cohort, date, project, campus, classGroup, week, name } = parseJira(attachedFileName);
+      return getJiraTemplate(cohort, date, project, campus, classGroup, week, name);
     }
     case FILE_CATEGORY.UNIT: {
-      const { date, project, campus, classGroup, name1, name2 } = parseUnit(attachedFileName);
-      const selectedName = await nameSelect(name1, name2);
+      const { cohort, date, project, campus, classGroup, name } = parseUnit(attachedFileName);
       const selectedWeek = await weekSelect(project);
-      return getUnitTemplate(date, project, campus, classGroup, selectedWeek, selectedName);
+      return getUnitTemplate(cohort, date, project, campus, classGroup, selectedWeek, name);
     }
     case FILE_CATEGORY.DAY_OFF: {
-      const { date, campus, name } = parseDayOff(attachedFileName);
+      const { cohort, date, campus, name } = parseDayOff(attachedFileName);
       const selectedDayOffCategory = await dayOffSelect();
-      return getDayOffTemplate(date, campus, name, selectedDayOffCategory);
+      return getDayOffTemplate(cohort, date, campus, name, selectedDayOffCategory);
+    }
+    case FILE_CATEGORY.WRAP_UP_GATHER: {
+      const { cohort, date, day, campus } = parseWrapUpGather(attachedFileName);
+      const selectedName = await nameSelect(...WRAP_UP_GATHER_NAMES);
+      return getWrapUpGatherTemplate(cohort, date, day, campus, selectedName);
+    }
+
+    case FILE_CATEGORY.WRAP_UP: {
+      const { cohort, date, day, campus, name } = parseWrapUp(attachedFileName);
+      return getWrapUpTemplate(cohort, date, day, campus, name);
     }
 
     default: {
-      alert('파일 이름을 파싱, 템플릿을 가져오는 과정에서 에러가 발생했습니다.');
-      throw new Error('파일 이름을 파싱, 템플릿을 가져오는 과정에서 에러가 발생했습니다.');
+      alert('파일 이름을 파싱, 템플릿을 가져오는 과정에서 에러가 발생했습니다(파일 이름이 올바른지 확인해주세요).');
+      throw new Error('파일 이름을 파싱, 템플릿을 가져오는 과정에서 에러가 발생했습니다(파일 이름이 올바른지 확인해주세요).');
     }
   }
 };
