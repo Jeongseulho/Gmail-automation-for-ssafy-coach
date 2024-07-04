@@ -7,7 +7,9 @@ export const formatDate = (str: string, isIncludeWeek: boolean = true) => {
 
   const weekdays = ['일', '월', '화', '수', '목', '금', '토'];
 
-  const formattedDate = `${date.getMonth() + 1}월 ${date.getDate()}일(${weekdays[date.getDay()]})`;
+  const formattedMonth = (date.getMonth() + 1).toString().padStart(2, '0'); // 두 자리 형식으로 월 표시
+  const formattedDay = date.getDate().toString().padStart(2, '0'); // 두 자리 형식으로 일 표시
+  const formattedDate = `${formattedMonth}월 ${formattedDay}일(${weekdays[date.getDay()]})`;
 
   return isIncludeWeek ? formattedDate : formattedDate.slice(0, -3);
 };
