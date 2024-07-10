@@ -20,6 +20,7 @@ export const createDialog = <T extends string | DayOffCategory>(options: T[], ti
   options.forEach((option) => {
     const button = document.createElement('button');
     button.textContent = option;
+    button.setAttribute('style', 'padding: 5px 10px; border: solid black 1px; border-radius: 3px; cursor: pointer;');
     button.onclick = () => {
       callback(option);
       dialog.close();
