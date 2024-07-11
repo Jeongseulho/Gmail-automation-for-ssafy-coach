@@ -38,7 +38,7 @@ export const getDailyGatherTemplate = (cohort: string, date: string, campus: Cam
           <td style="padding:2px 3px;border-width:1px;border-style:solid;border-color:rgb(204,204,204) rgb(0,0,0) rgb(0,0,0);vertical-align:bottom;text-align:center">
             <span style="font-size:10pt;font-family:Arial;color:rgb(30,30,35)">${classNum}반</span></td>
           <td style="padding:2px 3px;border-width:1px;border-style:solid;border-color:rgb(204,204,204) rgb(0,0,0) rgb(0,0,0) rgb(204,204,204);vertical-align:bottom">
-            <span style="font-size:10pt;font-family:Arial;color:rgb(30,30,35)">- 해당사항 없음.</span></td>
+            <span style="font-size:10pt;font-family:Arial;color:rgb(30,30,35)">- 해당 사항 없음.</span></td>
           <td style="padding:2px 3px;border-width:1px;border-style:solid;border-color:rgb(204,204,204) rgb(0,0,0) rgb(0,0,0) rgb(204,204,204);vertical-align:bottom;text-align:center">
             <font color="#1e1e23" face="Arial"><span style="font-size:13.3333px">0</span></font>
           </td>
