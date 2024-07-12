@@ -8,7 +8,7 @@ export const getUnitTemplate = async (cohort: string, date: string, project: Pro
   const content = `
     <div>안녕하십니까, ${cohort} ${campus} 실습코치 ${name}입니다.</div>
     <br>
-    <div>${formatDate(date, false)} 단위 업무 보고서 첨부파일로 송부 드립니다.</div>
+    <div>${campus} ${classGroup} 금주 단위 업무 보고서 첨부파일로 송부 드립니다.</div>
     <br>
     <b>특이사항</b>
     <br>

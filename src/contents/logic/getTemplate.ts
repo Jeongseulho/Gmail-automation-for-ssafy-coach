@@ -1,3 +1,4 @@
+import { classGroupSelect } from './common/classGroupSelect';
 import { FILE_CATEGORY } from '@/constants/FileCategory';
 import { FileCategoryValue } from '@/types/FileCategoryValue';
 import { nameSelect } from '@/contents/logic/common/nameSelect';
@@ -23,7 +24,8 @@ import { classCntSelect } from './common/classCntSelect';
 
 export const getTemplate = async (attachedFileName: string, fileCategory: FileCategoryValue, isUnitWithJira: boolean) => {
   if (isUnitWithJira) {
-    const { date, project, campus, classGroup, week, name } = parseJira(attachedFileName);
+    const { date, project, campus, classGroup, week, name1, name2 } = parseJira(attachedFileName);
+    const name = await nameSelect(name1, name2);
     return getUnitWithJiraTemplate(date, project, campus, classGroup, week, name);
   }
   switch (fileCategory) {
@@ -37,18 +39,21 @@ export const getTemplate = async (attachedFileName: string, fileCategory: FileCa
       return getDailyTemplate(cohort, date, campus, classGroup || 'x반', name);
     }
     case FILE_CATEGORY.JIRA: {
-      const { cohort, date, project, campus, classGroup, week, name } = parseJira(attachedFileName);
+      const { cohort, date, project, campus, classGroup, week, name1, name2 } = parseJira(attachedFileName);
+      const name = await nameSelect(name1, name2);
       return getJiraTemplate(cohort, date, project, campus, classGroup, week, name);
     }
     case FILE_CATEGORY.UNIT: {
-      const { cohort, date, project, campus, classGroup, name } = parseUnit(attachedFileName);
+      const { cohort, date, project, campus, classGroup, name1, name2 } = parseUnit(attachedFileName);
+      const name = await nameSelect(name1, name2);
       const selectedWeek = await weekSelect(project);
       return getUnitTemplate(cohort, date, project, campus, classGroup, selectedWeek, name);
     }
     case FILE_CATEGORY.DAY_OFF: {
       const { cohort, date, campus, name } = parseDayOff(attachedFileName);
-      const selectedDayOffCategory = await dayOffSelect();
-      return getDayOffTemplate(cohort, date, campus, name, selectedDayOffCategory);
+      const dayOffCategory = await dayOffSelect();
+      const classGroup = await classGroupSelect();
+      return getDayOffTemplate(cohort, date, campus, classGroup, name, dayOffCategory);
     }
     case FILE_CATEGORY.WRAP_UP_GATHER: {
       const { cohort, date, day, campus } = parseWrapUpGather(attachedFileName);

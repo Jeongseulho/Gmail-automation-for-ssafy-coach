@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getDayOffTemplate 함수 오전 반차 휴가 신청서 템플릿을 반환한다 1`] = `"[SSAFY] 02월 02일(금) 구미 실습코치 이희진 휴가신청서 송부"`;
+exports[`getDayOffTemplate 함수 오전 반차 휴가 신청서 템플릿을 반환한다 1`] = `"[SSAFY] 02월 02일(금) 구미 1반 실습코치 이희진 오전 반차 신청서 송부"`;
 
 exports[`getDayOffTemplate 함수 오전 반차 휴가 신청서 템플릿을 반환한다 2`] = `
 "
     <div>안녕하십니까, 10기 구미 실습코치 이희진입니다.</div>
     <br>
-    <div>02월 02일(금) (오전 반차) 신청서 첨부파일로 송부 드립니다.</div>
+    <div>02월 02일(금) 오전 반차 신청서 첨부파일로 송부 드립니다.</div>
     <br>
     <b>특이사항</b>
     <br>
@@ -17,13 +17,13 @@ exports[`getDayOffTemplate 함수 오전 반차 휴가 신청서 템플릿을 �
   "
 `;
 
-exports[`getDayOffTemplate 함수 오후 반차 휴가 신청서 템플릿을 반환한다 1`] = `"[SSAFY] 02월 02일(금) 구미 실습코치 이희진 휴가신청서 송부"`;
+exports[`getDayOffTemplate 함수 오후 반차 휴가 신청서 템플릿을 반환한다 1`] = `"[SSAFY] 02월 02일(금) 구미 1반 실습코치 이희진 오후 반차 신청서 송부"`;
 
 exports[`getDayOffTemplate 함수 오후 반차 휴가 신청서 템플릿을 반환한다 2`] = `
 "
     <div>안녕하십니까, 10기 구미 실습코치 이희진입니다.</div>
     <br>
-    <div>02월 02일(금) (오후 반차) 신청서 첨부파일로 송부 드립니다.</div>
+    <div>02월 02일(금) 오후 반차 신청서 첨부파일로 송부 드립니다.</div>
     <br>
     <b>특이사항</b>
     <br>
@@ -34,7 +34,7 @@ exports[`getDayOffTemplate 함수 오후 반차 휴가 신청서 템플릿을 �
   "
 `;
 
-exports[`getDayOffTemplate 함수 하루 휴가 신청서 템플릿을 반환한다 1`] = `"[SSAFY] 02월 02일(금) 구미 실습코치 이희진 휴가신청서 송부"`;
+exports[`getDayOffTemplate 함수 하루 휴가 신청서 템플릿을 반환한다 1`] = `"[SSAFY] 02월 02일(금) 구미 1반 실습코치 이희진 연차 신청서 송부"`;
 
 exports[`getDayOffTemplate 함수 하루 휴가 신청서 템플릿을 반환한다 2`] = `
 "

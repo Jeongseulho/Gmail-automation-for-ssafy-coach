@@ -9,13 +9,15 @@ export const parseUnit = (fileName: string) => {
   const project = parsedStr[3];
   const campus = parsedStr[4];
   const classGroup = parsedStr[5];
-  const name = parsedStr[6];
+  const name1 = parsedStr[6];
+  const name2 = parsedStr[7];
   return {
     cohort,
     date,
     project: project as Project,
     campus: campus as Campus,
     classGroup,
-    name: removeExtension(name),
+    name1,
+    name2: removeExtension(name2),
   };
 };

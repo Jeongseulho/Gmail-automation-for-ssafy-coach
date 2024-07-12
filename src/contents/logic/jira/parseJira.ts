@@ -11,7 +11,8 @@ export const parseJira = (fileName: string) => {
   const campus = parsedStr[4];
   const classGroup = parsedStr[5];
   const week = parsedStr[6];
-  const name = parsedStr[7];
+  const name1 = parsedStr[7];
+  const name2 = parsedStr[8];
   return {
     cohort,
     date,
@@ -19,6 +20,7 @@ export const parseJira = (fileName: string) => {
     campus: campus as Campus,
     classGroup,
     week: week as Week,
-    name: removeExtension(name),
+    name1,
+    name2: removeExtension(name2),
   };
 };
