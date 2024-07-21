@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack --config webpack/webpack.config.js",
-    "dev": "webpack --watch --config webpack/webpack.config.js"
+    "prebuild:prod": "node public/updateVer.js",
+    "build": "npm run prebuild:prod && webpack --config webpack/webpack.config.js --mode production",
+    "dev": "webpack --watch --config webpack/webpack.config.js --mode development"
   },
   "repository": {
     "type": "git",
