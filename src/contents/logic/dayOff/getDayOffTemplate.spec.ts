@@ -13,7 +13,7 @@ describe('getDayOffTemplate 함수', () => {
   });
 
   it('하루 휴가 신청서 템플릿을 반환한다', () => {
-    const { title, content } = getDayOffTemplate('10기', '240202', '구미', '1반', '이희진', '연차');
+    const { title, content } = getDayOffTemplate('10기', '240202', '구미', '1반', '이희진', '휴가');
     expect(title).toMatchSnapshot();
     expect(content).toMatchSnapshot();
   });
