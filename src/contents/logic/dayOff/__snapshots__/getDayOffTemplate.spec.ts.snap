@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getDayOffTemplate 함수 오전 반차 휴가 신청서 템플릿을 반환한다 1`] = `"[SSAFY] 2월 2일(금) 구미 1반 실습코치 이희진 오전 반차 신청서 송부"`;
+exports[`getDayOffTemplate 함수 오전 반차 휴가 신청서 템플릿을 반환한다 1`] = `"[SSAFY] 2월 2일(금) 구미 실습코치 이희진 오전 반차 신청서 송부"`;
 
 exports[`getDayOffTemplate 함수 오전 반차 휴가 신청서 템플릿을 반환한다 2`] = `
 "
@@ -17,7 +17,7 @@ exports[`getDayOffTemplate 함수 오전 반차 휴가 신청서 템플릿을 �
   "
 `;
 
-exports[`getDayOffTemplate 함수 오후 반차 휴가 신청서 템플릿을 반환한다 1`] = `"[SSAFY] 2월 2일(금) 구미 1반 실습코치 이희진 오후 반차 신청서 송부"`;
+exports[`getDayOffTemplate 함수 오후 반차 휴가 신청서 템플릿을 반환한다 1`] = `"[SSAFY] 2월 2일(금) 구미 실습코치 이희진 오후 반차 신청서 송부"`;
 
 exports[`getDayOffTemplate 함수 오후 반차 휴가 신청서 템플릿을 반환한다 2`] = `
 "
@@ -34,7 +34,7 @@ exports[`getDayOffTemplate 함수 오후 반차 휴가 신청서 템플릿을 �
   "
 `;
 
-exports[`getDayOffTemplate 함수 하루 휴가 신청서 템플릿을 반환한다 1`] = `"[SSAFY] 2월 2일(금) 구미 1반 실습코치 이희진 휴가 신청서 송부"`;
+exports[`getDayOffTemplate 함수 하루 휴가 신청서 템플릿을 반환한다 1`] = `"[SSAFY] 2월 2일(금) 구미 실습코치 이희진 휴가 신청서 송부"`;
 
 exports[`getDayOffTemplate 함수 하루 휴가 신청서 템플릿을 반환한다 2`] = `
 "

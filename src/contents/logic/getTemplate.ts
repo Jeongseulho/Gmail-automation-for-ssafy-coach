@@ -1,4 +1,3 @@
-import { classGroupSelect } from './common/classGroupSelect';
 import { FILE_CATEGORY } from '@/constants/FileCategory';
 import { FileCategoryValue } from '@/types/FileCategoryValue';
 import { nameSelect } from '@/contents/logic/common/nameSelect';
@@ -52,8 +51,7 @@ export const getTemplate = async (attachedFileName: string, fileCategory: FileCa
     case FILE_CATEGORY.DAY_OFF: {
       const { cohort, date, campus, name } = parseDayOff(attachedFileName);
       const dayOffCategory = await dayOffSelect();
-      const classGroup = await classGroupSelect();
-      return getDayOffTemplate(cohort, date, campus, classGroup, name, dayOffCategory);
+      return getDayOffTemplate(cohort, date, campus, name, dayOffCategory);
     }
     case FILE_CATEGORY.WRAP_UP_GATHER: {
       const { cohort, date, day, campus } = parseWrapUpGather(attachedFileName);

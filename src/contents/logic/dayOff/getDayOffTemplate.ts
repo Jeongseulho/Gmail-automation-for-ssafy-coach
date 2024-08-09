@@ -1,8 +1,8 @@
 import { DayOffCategory } from '@/types/DayOffCategory';
 import { formatDate } from '@/utils/formatDate';
 
-export const getDayOffTemplate = (cohort: string, date: string, campus: string, classGroup: string, name: string, dayOffCategory: DayOffCategory) => {
-  const title = `[SSAFY] ${formatDate(date)} ${campus} ${classGroup} 실습코치 ${name} ${dayOffCategory} 신청서 송부`;
+export const getDayOffTemplate = (cohort: string, date: string, campus: string, name: string, dayOffCategory: DayOffCategory) => {
+  const title = `[SSAFY] ${formatDate(date)} ${campus} 실습코치 ${name} ${dayOffCategory} 신청서 송부`;
   const content = `
     <div>안녕하십니까, ${cohort} ${campus} 실습코치 ${name}입니다.</div>
     <br>
